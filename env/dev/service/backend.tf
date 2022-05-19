@@ -1,0 +1,12 @@
+terraform {
+  backend "s3" {
+    bucket   = "tfdemo-backend-bucket"
+    key      = "env/dev/service/terraform-dev-service.tfstate"
+    region   = "cn-north-1"
+    endpoint = "obs.cn-north-1.myhuaweicloud.com"
+
+    skip_region_validation      = true
+    skip_metadata_api_check     = true
+    skip_credentials_validation = true
+  }
+}
